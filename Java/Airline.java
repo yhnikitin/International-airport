@@ -1,6 +1,6 @@
 package Project;
 
-public interface AirlineInterface {
+public interface Airline {
     public int getProfitMargin();
     public int getCostPerCustomer();
 }

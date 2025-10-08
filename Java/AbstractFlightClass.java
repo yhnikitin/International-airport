@@ -1,23 +1,23 @@
 package Project;
 
-public abstract class AbstractFlight {
-    private AirlineInterface airline;
-    private AircraftInterface aircraft;
+public abstract class AbstractFlightClass {
+    private Airline airline;
+    private Aircraft aircraft;
     private int flightNumber;
     private String destination;
     private String departureTime;
     private String departureGate;
-    private AirportInterface departureAirport;
-    private AirportInterface destinationAirport;
+    private Airport departureAirport;
+    private Airport destinationAirport;
 
-    public AbstractFlight(AirlineInterface airline,
-                          AircraftInterface aircraft,
+    public AbstractFlight(Airline airline,
+                          Aircraft aircraft,
                           int flightNumber,
                           String destination,
                           String departureTime,
                           String departureGate,
-                          AirportInterface departureAirport,
-                          AirportInterface destinationAirport) {
+                          Airport departureAirport,
+                          Airport destinationAirport) {
         this.airline = airline;
         this.aircraft = aircraft;
         this.flightNumber = flightNumber;
@@ -28,12 +28,11 @@ public abstract class AbstractFlight {
         this.destinationAirport = destinationAirport;
     }
 
-    public AirlineInterface getAirline() { return airline; }
-    public AircraftInterface getAircraft() { return aircraft; }
+    public Airline getAirline() { return airline; }
+    public Aircrafte getAircraft() { return aircraft; }
     public int getFlightNumber() { return flightNumber; }
     public String getDestination() { return destination; }
     public String getDepartureTime() { return departureTime; }
     public String getDepartureGate() { return departureGate; }
     abstract public int getFlightCost();
-
 }

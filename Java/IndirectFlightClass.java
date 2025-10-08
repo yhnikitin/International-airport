@@ -1,23 +1,22 @@
 package Project;
 
-public class IndirectFlight extends AbstractFlight {
-
+public class IndirectFlightClass extends AbstractFlight {
     private int flightCost;
-    private AirportInterface[] transitAirports;
+    private Airport[] transitAirports;
 
-    public IndirectFlight(AirlineInterface airline,
-                          AircraftInterface aircraft,
+    public IndirectFlight(Airline airline,
+                          Aircraft aircraft,
                           int flightNumber,
                           String destination,
                           String departureTime,
                           String departureGate,
-                          AirportInterface departureAirport,
-                          AirportInterface destinationAirport,
-                          AirportInterface[] transitAirports) {
+                          Airport departureAirport,
+                          Airport destinationAirport,
+                          Airport[] transitAirports) {
         super(airline, aircraft, flightNumber, destination, departureTime, departureGate, departureAirport, destinationAirport);
         this.transitAirports = transitAirports;
         this.flightCost = airline.getProfitMargin() * airline.getCostPerCustomer();
-        for (AirportInterface airport : this.transitAirports) {
+        for (Airport airport : this.transitAirports) {
             this.flightCost = this.flightCost + airport.getRefuelingLevy();
         }
     }
